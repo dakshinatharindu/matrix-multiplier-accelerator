@@ -28,12 +28,14 @@ module mat_mul #(
     )(
     input   logic                       clk,
     input   logic                       rstn,
-    input   logic                       in_valid,
     input   logic   [DATA_WIDTH-1:0]    a       [0:ROWS_A-1][0:COLS_A-1],
     input   logic   [DATA_WIDTH-1:0]    b       [0:COLS_A-1][0:COLS_B-1],
     output  logic   [DATA_WIDTH-1:0]    c       [0:ROWS_A-1][0:COLS_B-1],
     output  logic                       out_valid,
-    input   logic                       out_ready
+    input   logic                       out_ready,
+    output  logic                                [31:0]         counter,
+    output  logic r,
+    output logic bu
     );
     
 
@@ -43,13 +45,16 @@ module mat_mul #(
     logic                       ready;
     logic                       buff_filled;
 
+    assign r = ready;
+    assign bu = buff_filled;
+
     always_ff @(posedge clk) begin
         if (!rstn) begin
             ready <= 1'b1;
             buff_filled <= 1'b0;
-        end 
+        end
         else begin
-            if (ready & in_valid & !buff_filled) begin
+            if (ready && !buff_filled) begin
                 a_copy <= a;
                 ready <= 1'b0;
                 for ( int i = 0; i < COLS_B; i++ ) begin
@@ -123,6 +128,14 @@ module mat_mul #(
         if (buff_filled & out_ready) begin
             buff_filled <= 1'b0;
             ready <= 1'b1;
+        end
+    end
+
+    always_ff @(posedge clk) begin
+        if (rstn == 0) begin
+            counter <= 0;
+        end else begin
+            counter <= counter + 1;
         end
     end
 

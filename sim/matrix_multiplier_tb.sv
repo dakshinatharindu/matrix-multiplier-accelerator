@@ -21,7 +21,7 @@
 
 
 module matrix_multiplier_tb();
-        parameter DATA_WIDTH    = 8;
+        parameter DATA_WIDTH    = 32;
         parameter ROWS_A        = 2;
         parameter COLS_A        = 2;
         parameter COLS_B        = 2;
