@@ -100,7 +100,6 @@ hw_handoff
 ipshared
 ip/mat_mul/mat_mul.sim/
 ip/mat_mul/mat_mul.runs/
-hw/
 sw/mat_mul_design_wrapper/
 .vscode/
 hw/ip_repo/matrix_multiplier_1_0/bd/
@@ -108,7 +107,7 @@ hw/ip_repo/matrix_multiplier_1_0/drivers/
 hw/ip_repo/matrix_multiplier_1_0/example_designs/
 hw/ip_repo/matrix_multiplier_1_0/xgui/
 *xml
-
+hw/mat_mul_hw/
 sw/mat_mul_sw_system/
 sw/mat_mul_sw/.cproject
 sw/mat_mul_sw/_ide
