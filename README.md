@@ -5,4 +5,4 @@ This is a matrix multiplication accelerator implemented in Xilinz Zynq Soc. This
 
 ## RTL Design
 The RTL design of the accelerator is shown below. 
-![alt text](https://github.com/dakshinatharindu/matrix-multiplier-accelerator/blob/main/images/schematic.pdf)
+![alt text](https://github.com/dakshinatharindu/matrix-multiplier-accelerator/blob/main/images/rtl-sch.png)
