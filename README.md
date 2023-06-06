@@ -158,7 +158,7 @@ The result of the python script is shown below.
 
 ## Implementation
 The accelerator is implemented on a Zybo Z7-20 board. The Zybo Z7-20 board has a Zynq-7000 SoC. The Zynq-7000 SoC has a dual-core ARM Cortex-A9 processor and a Artix-7 FPGA. The following figure shows the Zybo Z7-20 board.
-![alt text](https://www.researchgate.net/profile/Mats-Heigre/publication/327799190/figure/fig12/AS:673340549234695@1537548305655/Xilinx-Digilent-Zybo-board-28.jpg)
+![alt text](https://github.com/dakshinatharindu/matrix-multiplier-accelerator/blob/main/images/Xilinx-Digilent-Zybo-board-28.png)
 
 The accelerator is implemented on the FPGA.
 The ```UART1``` port is used to communicate with python script. 
